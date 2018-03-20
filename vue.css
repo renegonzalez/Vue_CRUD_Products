@@ -1,0 +1,27 @@
+
+ul li p{
+background-color:#e9ecef;
+padding: 6px 4px 20px 4px;
+}
+
+ul li{
+    list-style-type: none;
+    cursor:pointer;
+
+}
+
+.col-center{
+    margin:0 auto;
+}
+
+.row-pad-top{
+    padding-top: 30px;
+}
+
+ul li.selected p{
+    background-color:#c5c7c9;
+}
+
+.pad-left{
+    margin-left:10px;
+}

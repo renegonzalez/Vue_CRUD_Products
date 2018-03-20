@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="vue.css">
+
+</head>
+<body>
+	<main role="main" id="root">
+<mycomponent inline-template>
+<div>
+  <h1 class="text-center">{{ title }} <button class="btn btn-secondary " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Edit</button></h1> 
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+          <div class="col-center">
+              <div class="form-group">
+              <p>You can change the title </p><input type="text" v-model="title" number name="title" id="title"/>
+              </div>
+            </div>
+      </div>
+    </div>
+    
+  <div class="row row-pad-top">
+    <div class="offset-md-2 col-md-4">
+      <div class="jumbotron">
+      <h4 class="text-center">New Item</h4>
+      <div class="form-group">
+        <label for="product">Product</label>
+        <input type="text" v-model="newProduct.description" name="product" id="product" class="float-right"/>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" v-model="newProduct.price" number name="price" id="price" class="float-right"/>
+      </div>
+      <div class="btn-group float-right" role="group">
+        <button type="button" v-on:click="addTask()" class="btn btn-secondary">Add Item</button>
+        <button type="button" v-on:click="clearNewProduct()" class="btn btn-secondary">Clear Item</button>
+      </div>
+    </div>
+    </div>
+    <div class="offset-md-1 col-md-4">
+      <h4 class="text-center">Items Saved</h4>
+      <ul>
+        <li v-for="item in products" v-if="item" v-on:click="toggleSelected(item)" v-bind:class="{ 'selected' : item.checked}">
+          <p>{{ item.description }} - {{ item.price }} <button v-on:click.stop="deleteProduct(item)" class="btn btn-secondary float-right"> <i class="fas fa-trash"></i></button></p>
+        </li>
+        
+      </ul>
+      <button v-if="products && products.length" v-on:click="deleteAllProducts()" class="btn btn-secondary float-right pad-left">Delete All <i class="fas fa-trash"></i></button>
+      <button v-if="products && products.length" v-on:click="deleteSelectedProducts()" class="btn btn-secondary float-right pad-left">Selected <i class="fas fa-trash"></i></button>
+      <div v-if="products && !products.length"><p class="text-center">Empty Cart</p></div>
+    </div>
+    
+  </div>
+</div>
+</mycomponent>
+</main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+  <script src="vue.js"></script>
+  <script src=""></script>
+  
+</body>
+</html>
