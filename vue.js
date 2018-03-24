@@ -117,9 +117,9 @@ var vm = new Vue({
  data: {
      title: 'Some Operations',
      items: [
-     { description: 'ME: Andromeda',price:'87',checked:false },
-     { description: 'Fifa 2017',price:'75',checked:false },
-     { description: 'League of Legend',price:'221',checked:false }
+     { description: 'Design Patterns',price:'41',checked:false },
+     { description: 'Clean Code',price:'29',checked:false },
+     { description: 'Learning Vue.JS 2',price:'41',checked:false }
      ]
  },
  methods: {
